@@ -29,7 +29,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     <!-- Add additional source elements for different video formats -->
   </video>
 <h2 style="font-weight:bold;">Welcome to TIW <i style="color:yellow;"class="fas fa-smile"></i> </h2>
+<script>
+function navigateAndSubmit() {
+  var url = window.location.origin + "/static/index.html";
+  window.location.href = url;
 
+  setTimeout(function() {
+    var inputElement = document.getElementById("uv-address");
+    if (inputElement) {
+      inputElement.value = "youtube.com";
+      inputElement.dispatchEvent(new Event("input"));
+      inputElement.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+      inputElement.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter" }));
+    }
+  }, 1000);
+}
+
+</script>
 <!-- partial:index.partial.html -->
 <nav>
   <ul>
@@ -39,7 +55,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     <li><a href="/static/"> Proxy </a></li>
     <li><a href="/gs.html"> Games </a></li>
     <li><a href="/settings/"> Settings </a></li> <br>
-    
   </ul>
 </nav>
   <div id="what-the-hell-is-this">
